@@ -1,6 +1,6 @@
 module Post::Contract
   class Create < Reform::Form
     property :content
-    validates :name, presence: true
+    validates :content, presence: true
   end
 end
