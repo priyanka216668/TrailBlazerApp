@@ -1,10 +1,11 @@
 .row.new
-  h1 New Post
-
-  = simple_form_for  model do |f|
+  h1 Edit Post
+  = simple_form_for model do |f|
     .row
       .col-sm-12
         = f.input :content, placeholder: "content", label: false
     .row
       .col-sm-12
-        = f.submit 'Create Post'
+        = f.submit 'Save'
+      .col-sm-2
+        h6 = back
