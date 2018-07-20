@@ -17,11 +17,10 @@ class Post::Create < Trailblazer::Operation
   step Contract::Persist( )
   step :notify!
 
-
   def assign_current_user(options, model, **)
-    #byebug
     options["model"].user_id = model[:current_user].id
   end
+
   def notify!(options, model:, **)
     options["result.notify"] = Rails.logger.info("New  post #{model.content}.")
   end
