@@ -69,4 +69,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "dry-validation"
 gem 'devise'
 gem "pundit"
+gem 'bootstrap', '~> 4.1.1'
 
