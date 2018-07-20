@@ -7,8 +7,9 @@ module User::Cell
     def post_count
     	link_to model.posts.count, posts_path(model.id)
     end
-    def create_post
-    	#link_to "Create Post", new_user_post_path(model.id)
+
+    def log_in
+      link_to "Login", devise_user_session_path
     end
   end
 end
