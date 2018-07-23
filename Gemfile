@@ -54,6 +54,8 @@ group :development do
   gem "trailblazer-cells"
   gem "cells-rails"
   gem "cells-slim"
+
+  # gem "cells-haml"
 end
 
 group :test do
@@ -70,4 +72,6 @@ gem "dry-validation"
 gem 'devise'
 gem "pundit"
 gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.12.9'
 
