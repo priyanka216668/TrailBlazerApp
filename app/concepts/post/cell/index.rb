@@ -5,7 +5,11 @@ module Post::Cell
     end
 
     def log_in
-    	link_to "Log in to create new post", devise_user_session_path
+      link_to "Log in to create new post", devise_user_session_path
+    end
+
+    def back()
+      link_to "Back", root_path
     end
   end
 end

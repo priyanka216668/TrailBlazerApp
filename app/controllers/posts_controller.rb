@@ -8,7 +8,8 @@ class PostsController < ApplicationController
 
   def create
     result =  Post::Create.(params, "current_user" => current_devise_user)
-    return redirect_to posts_path(current_devise_user.id)
+    #return redirect_to posts_path(current_devise_user.id)
+    return redirect_to home_path
   end
     #render cell(Post::Cell::New, @form), layout: false
   #end
