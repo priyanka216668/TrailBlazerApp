@@ -1,7 +1,7 @@
 module Post::Cell
   class Item < Trailblazer::Cell
-    def content
-      link_to model.content, post_path(model.id) unless model == nil
+    def title
+      link_to model.title, post_path(model.id) unless model == nil
     end
 
     def edit
