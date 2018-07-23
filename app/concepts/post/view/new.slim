@@ -4,6 +4,9 @@
   = simple_form_for  model do |f|
     .row
       .col-sm-12
+        = f.input :title, placeholder: "Title", label: false
+    .row
+      .col-sm-12
         = f.input :content, placeholder: "content", label: false
     .row
       .col-sm-12
