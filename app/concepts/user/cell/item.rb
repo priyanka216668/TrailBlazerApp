@@ -1,7 +1,7 @@
 module User::Cell
   class Item < Trailblazer::Cell
-    def name
-      link_to model.name, model unless model == nil
+    def first_name
+      link_to model.first_name, model unless model == nil
     end
 
     def post_count
