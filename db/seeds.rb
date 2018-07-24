@@ -10,8 +10,8 @@
 
 #Uncomment below lines to generate data
 
-# role = Role.new(name:'normal_user', priority: 2)
-# role.save!
+#roles = Role.create([{ name:'admin', priority: 1 }, { name:'normal_user', priority: 2 }])
+
 #require 'csv'
 
 # csv_text = File.read(Rails.root.join('lib', 'seed', 'user_data.csv'))
@@ -24,7 +24,7 @@
 #   u.gender= row['gender']
 #   u.phone_number= row['phone_number']
 #   u.password = row['password']
-#   u.role_id = row['role_id'].to_i
+#   u.role_id = Role.find_by( name: "normal_user").id
 #   u.save
 # end
 # csv_text = File.read(Rails.root.join('lib', 'seed', 'post_data.csv'))
