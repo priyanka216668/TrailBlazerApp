@@ -8,12 +8,12 @@ module Home::Cell
     # 	link_to "Logout", destroy_devise_user_session_path, :method  => 'delete'
     # end
 
-    def create_post
-      link_to "Create Post", new_post_path
-    end
+    # def create_post
+    #   link_to "Create Post", new_post_path
+    # end
 
-    def edit_profile
-      link_to "Edit Profile"
-    end
+    # def edit_profile
+    #   link_to "Edit Profile"
+    # end
   end
 end
