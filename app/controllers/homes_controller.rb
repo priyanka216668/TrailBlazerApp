@@ -3,7 +3,7 @@ class HomesController < ApplicationController
 
   def show
     result = Home::Show.("current_user" => current_devise_user)
-    render cell(Home::Cell::Show, result), layout: true
+    render cell(Home::Cell::Show, result, layout: Gemgem::Cell::Layout)
     # if devise_user_signed_in?
     #   redirect_to new_post_path
     # else
