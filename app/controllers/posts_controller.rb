@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     run Post::Update do |result|
-      return redirect_to posts_path(result["model"].id)
+      return redirect_to home_path
     end
     render cell(Post::Cell::Edit, @form), layout: false
   end
