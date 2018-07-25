@@ -1,5 +1,7 @@
-h4.post-content
-    = title 
+br
 .row
-  = edit
-hr
+  .col-md-6.h4.text-justify.font-weight-bold
+    = title
+  .col-md-4.h4.text-center.font-weight-bold
+    - if user_signed_in?
+      = link_to "Edit", edit_post_path(model.id), class: "btn btn-sm btn-success"
