@@ -1,8 +1,6 @@
 module User::Cell
   class Index < Trailblazer::Cell
-    # def display_header
-
-    # end
-    
+    include Kaminari::Cells
+    include Kaminari::Helpers
   end
 end
