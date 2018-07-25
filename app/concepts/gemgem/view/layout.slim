@@ -5,21 +5,49 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
   body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      a.navbar-brand href="#"
-      img.d-inline-block.align-top alt="" height="15" src="" width="15" /
-      - if user_signed_in?
-        a.nav-link.text-primary #{current_user}
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto
+    nav.navbar.navbar-dark.bg-dark
+      .container-fluid
+        .navbar-header
+          - if user_signed_in?
+            a.nav-link.text-primary.text-left #{current_user}
         - if user_signed_in?
-          li.nav-item
-          = link_to "Create Post", new_post_path, class: "btn btn-sm btn-success ml-0"
-          li.nav-item
-          = link_to "Edit Profile", devise_user_session_path, class: "btn btn-sm btn-success"
-          li.nav-item
-          = link_to "Logout", destroy_devise_user_session_path, class: "btn btn-sm btn-success", style: "float:right;"
+          .row
+            .col-sm-4
+              button.btn.btn-sm.btn-success  data-toggle="modal" data-target=("#CreatePostModal" )  Create Post
+            .col-sm-4
+              = link_to "Edit Profile", devise_user_session_path, class: "btn btn-sm btn-success"
+            .col-sm-4
+              = link_to "Logout", destroy_devise_user_session_path, class: "btn btn-sm btn-success"
         - else
-          li.nav-item
-          = link_to "Login", devise_user_session_path, class: "btn btn-sm btn-success", style: "float:right;"
+          .row
+            .col-sm-4
+              = link_to "Login", devise_user_session_path, class: "btn btn-sm btn-success", style: "float:right;"
+
+
+    #CreatePostModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+      .modal-dialog role="document" 
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title New Post
+            button.close aria-label="Close" data-dismiss="modal" type="button" 
+              span aria-hidden="true"  ×
+          =form_for(Post.new, url: posts_path, method: :post, html: {class: 'form-inline'}) do |form|
+            .modal-body
+              div.row.mt-2.bg.bg-light
+                div.col-md-4
+                  =form.label 'title'
+                div.col-md-8
+                  =form.text_field 'title', :required => "required"
+                  
+              div.row.mt-2.bg.bg-light
+                div.col-md-4
+                  =form.label'content'
+                div.col-md-8
+                  =form.text_field 'content', :required => "required"
+                  
+            .modal-footer
+              div.row.mt-2.bg.bg-light
+                div.col-md-4
+                =form.submit 'Create'
+
     = yield
