@@ -1,7 +1,12 @@
 br
 .row
-  .col-md-6.h4.text-justify.font-weight-bold
-    = title
-  .col-md-4.h4.text-center.font-weight-bold
-    - if user_signed_in?
-      = link_to "Edit", edit_post_path(model.id), class: "btn btn-sm btn-success"
+  - if user_signed_in?
+    .col-md-6.h4.text-justify.font-weight-bold
+      = title
+    .col-md-4.h4.text-center.font-weight-bold
+      = render 'modal'
+  - else
+    .col-md-4.text-left
+      = title
+    .col-md-8.text-left
+      = content
