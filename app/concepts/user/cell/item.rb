@@ -5,7 +5,7 @@ module User::Cell
     end
 
     def post_count
-    	link_to model.posts.count, posts_path(model.id)
+      link_to model.posts.count, user_posts_path(model.id)
     end
 
     def log_in
