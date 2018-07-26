@@ -19,8 +19,6 @@ module Post::Cell
     def back
       if options[:context][:controller].current_devise_user != nil
         link_to "Back to posts list", home_path
-      else
-        link_to "Back to posts list", posts_path
       end
     end
   end
