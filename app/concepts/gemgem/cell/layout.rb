@@ -6,7 +6,7 @@ module Gemgem::Cell
     end
 
     def current_user
-      options[:context][:controller].current_devise_user.first_name
+      options[:context][:controller].current_devise_user
     end
   end
 end
