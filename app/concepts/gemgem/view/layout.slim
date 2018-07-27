@@ -9,7 +9,7 @@ html
       .container-fluid
         .navbar-header
           - if user_signed_in?
-            a.nav-link.text-primary.text-left #{current_user}
+            a.nav-link.text-primary.text-left #{current_user.first_name} #{current_user.last_name}
         - if user_signed_in?
           .row
             .col-sm-4
