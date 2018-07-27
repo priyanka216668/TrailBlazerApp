@@ -1,0 +1,16 @@
+button.btn.btn-sm.btn-danger  data-toggle="modal" data-target=("#DeletePostModal" )  Delete
+
+#DeletePostModal.modal.hide.fade
+  .modal-dialog.modal-sm role="document" 
+    .modal-content
+      =form_for model, method: :delete, html: {class: 'form-inline'} do |form|
+        .modal-body
+          div.row
+            .col.text-center.text-dark
+              | Are you sure?
+          div.row.mt-2  style=("float: right;")
+            .col-md-6
+              button.btn.btn-sm.btn-primary type="submit"  Delete
+            .col-md-3  
+              button.btn.btn-sm data-dismiss="modal" type="button" Cancel
+        
