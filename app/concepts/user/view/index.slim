@@ -1,5 +1,9 @@
 br
 .container
-  div.border.border-rounded.border-primary.bg.bg-light
-    = cell(User::Cell::Item, collection: model)
-= paginate(model)
+  table.table.text-center.h5.text-weight-bold
+    thead
+      tr
+        th scope="col"  User
+        th scope="col"  Number of Post
+    tbody.text-primary
+      = cell(User::Cell::Item, collection: model)

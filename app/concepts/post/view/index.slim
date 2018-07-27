@@ -1,4 +1,9 @@
 br
 .container
-  div.border.border-rounded.border-primary.bg.bg-light
-    = cell(Post::Cell::Item, collection: model)
+  table.table.h5
+    thead
+      tr
+        th  Post Title
+        th = link_to "Back", users_path, class: "btn btn-sm btn-primary", style: "float:right;"
+    tbody
+      = cell(Post::Cell::Item, collection: model)

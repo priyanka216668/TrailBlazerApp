@@ -1,4 +1,8 @@
 br
 .container
-  div.border.border-rounded.border-primary.bg.bg-light
-    = cell(Post::Cell::Item, collection: model["model"])
+   table.table.h5.text-weight-bold
+    thead
+      tr
+        th scope="col"  Post Title
+    tbody.text-primary
+      = cell(Post::Cell::Item, collection: model["model"])

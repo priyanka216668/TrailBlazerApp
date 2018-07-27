@@ -1,7 +1,5 @@
-br
-.row
-  .col-md-6.
-    = render 'show_modal'
+tr
+  td = render 'show_modal'
   - if user_signed_in?
-    .col-md-4.h4.text-center.font-weight-bold
-      = render 'edit_modal'
+    td = render 'edit_modal'
+    td = render 'delete_modal'
