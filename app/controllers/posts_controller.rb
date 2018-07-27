@@ -16,12 +16,12 @@ class PostsController < ApplicationController
 
   def index
     run Post::Index
-    render cell(Post::Cell::Index, result["model"]), layout: false
+    render cell(Post::Cell::Index, result["model"], layout: Gemgem::Cell::PostNavbar)
   end
 
   def show
     run Post::Show
-    render cell(Post::Cell::Show, result["model"]), layout: false
+    render cell(Post::Cell::Show, result["model"], layout: Gemgem::Cell::PostNavbar)
   end
 
   def edit
