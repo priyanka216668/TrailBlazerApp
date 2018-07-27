@@ -1,12 +1,7 @@
 br
 .row
+  .col-md-6.
+    = render 'show_modal'
   - if user_signed_in?
-    .col-md-6.h4.text-justify.font-weight-bold
-      = title
     .col-md-4.h4.text-center.font-weight-bold
-      = render 'modal'
-  - else
-    .col-md-4.text-left
-      = title
-    .col-md-8.text-left
-      = content
+      = render 'edit_modal'
