@@ -38,8 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     run Post::Delete
-
     flash[:alert] = "Post deleted"
-    redirect_to posts_path
+    redirect_to home_path
   end
 end
