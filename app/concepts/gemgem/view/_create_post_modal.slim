@@ -1,0 +1,23 @@
+button.btn.btn-sm.btn-success  data-toggle="modal" data-target=("#CreatePostModal" )  Create Post
+
+#CreatePostModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+      .modal-dialog role="document" 
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title New Post
+            button.close aria-label="Close" data-dismiss="modal" type="button" &times;
+          =form_for(Post.new, url: posts_path, method: :post, html: {class: 'form-inline'}) do |form|
+            .modal-body
+              div.row.mt-2.bg.bg-light
+                div.col-md-4
+                  =form.label 'title'
+                div.col-md-8
+                  =form.text_field 'title', :required => "required"
+              div.row.mt-2.bg.bg-light
+                div.col-md-4
+                  =form.label'content'
+                div.col-md-8
+                  =form.text_area 'content', :required => "required"
+              div.row.mt-2.bg.bg-light.
+                div.col-md-4.ml-auto
+                  =form.submit 'Create', :class  => "btn btn-primary"
