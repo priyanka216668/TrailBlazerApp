@@ -6,16 +6,16 @@ button.btn-md.btn-link.border-0.font-weight-bold  data-toggle="modal" data-targe
       .modal-header
         h5#exampleModalLabel.modal-title Post
         button.close data-dismiss="modal" type="button"  &times;
-      =form_for model, method: :get, html: {class: 'form-inline'} do |form|
+      =form_for model, url: post_path(model.id), method: :get, html: {class: 'form-inline'} do |form|
         .modal-body
           div.row.mt-2.bg.bg-light
             div.col-md-3
-              =form.label 'title'
+              =form.label 'Title'
             div.col-md-9
               =form.text_area 'title', :required => "required"
           div.row.mt-2.bg.bg-light
             div.col-md-3
-              =form.label'content'
+              =form.label'Content'
             div.col-md-9
               =form.text_area'content', :required => "required"
 
