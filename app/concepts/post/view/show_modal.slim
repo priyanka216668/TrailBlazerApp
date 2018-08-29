@@ -1,6 +1,7 @@
-button.btn-md.btn-link.border-0.font-weight-bold  data-toggle="modal" data-target=("#ShowPostModal" ) #{model.title}
+button.btn-md.btn-link.border-0.font-weight-bold  data-toggle="modal" data-target=("#show#{model.id}" ) #{model.title}
 
-#ShowPostModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+
+.modal.hide.fade  aria-labelledby="exampleModalLabel" id="show#{model.id}" role="dialog" tabindex="-1"
   .modal-dialog role="document" 
     .modal-content
       .modal-header

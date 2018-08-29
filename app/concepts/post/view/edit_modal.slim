@@ -1,12 +1,12 @@
-button.btn.btn-sm.btn-primary  data-toggle="modal" data-target=("#EditPostModal" )  Edit
-
-#EditPostModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1" 
+= link_to "Edit", edit_post_path(model),  "data-toggle" => "modal", 'data-target' => "#myModal#{model.id}"
+ 
+.modal.hide.fade aria-hidden="true" aria-labelledby="exampleModalLabel" id="myModal#{model.id}" tabindex="-1"
   .modal-dialog role="document" 
     .modal-content
       .modal-header
         h5#exampleModalLabel.modal-title Edit Post
         button.close data-dismiss="modal" type="button"  &times;
-      =form_for model, url: edit_post_path(model), remote: true, method: :put, html: {class: 'form-inline'} do |form|
+      =form_for model, method: :put, html: {class: 'form-inline'} do |form|
         .modal-body
           div.row.mt-2.bg.bg-light
             div.col-md-4
@@ -17,7 +17,7 @@ button.btn.btn-sm.btn-primary  data-toggle="modal" data-target=("#EditPostModal"
             div.col-md-4
               =form.label'content'
             div.col-md-8
-              =form.text_area'content', :required => "required"
+              =form.text_area 'content', :required => "required"
           div.row.mt-2.bg.bg-light.
             div.col-md-4.ml-auto
               =form.submit 'Update', :class  => "btn btn-primary"
