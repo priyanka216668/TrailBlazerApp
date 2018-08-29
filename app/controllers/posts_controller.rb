@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def edit
     run Post::Update::Present
-    render cell(Post::Cell::Edit, @form), layout: false
+    #render cell(Post::Cell::Edit, @form), layout: false
   end
 
   def update
